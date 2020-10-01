@@ -24,10 +24,10 @@ public class BankAccountController {
         return "bankaccount";
     }
 
-    @PostMapping
-    public String openBankAccount(@ModelAttribute BankAccount bankAccount, Model model) {
-        bankAccountService.createBankAccount(bankAccount);
-        model.addAttribute("allBankAccounts", bankAccountService.getBankAccountList());
-        return "redirect:bankaccount";
-    }
+//    @PostMapping
+//    public String openBankAccount(@ModelAttribute BankAccount bankAccount, Model model) {
+//        bankAccountService.createBankAccount(bankAccount);
+//        model.addAttribute("allBankAccounts", bankAccountService.getBankAccountList());
+//        return "redirect:bankaccount";
+//    }
 }
