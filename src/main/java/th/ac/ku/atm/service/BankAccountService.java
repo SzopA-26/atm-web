@@ -17,10 +17,11 @@ public class BankAccountService {
         this.restTemplate = restTemplate;
     }
 
-//    public void createBankAccount(BankAccount bankAccount) {
-//
-//        bankAccountList.add(bankAccount);
-//    }
+    public void createBankAccount(BankAccount bankAccount) {
+        String url = "http://localhost:8091/api/bankaccount";
+
+        restTemplate.postForObject(url, bankAccount, BankAccount.class);
+    }
 
     public List<BankAccount> getBankAccountList() {
         // connect to BankAccount API Service
@@ -28,7 +29,6 @@ public class BankAccountService {
         ResponseEntity<BankAccount[]> response = restTemplate.getForEntity(url, BankAccount[].class);
 
         BankAccount[] accounts = response.getBody();
-
         return Arrays.asList(accounts);
     }
 
