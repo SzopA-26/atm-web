@@ -30,7 +30,7 @@ public class CustomerService {
         repository.save(customer);
     }
 
-    public List<Customer> getCustomerList() {
+    public List<Customer> getCustomers() {
         return repository.findAll();
     }
 

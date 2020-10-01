@@ -28,7 +28,7 @@ public class CustomerController {
     public String getCustomerPage(Model model) {
 
         //  step 1. update model for template
-        model.addAttribute("allCustomers", customerService.getCustomerList());
+        model.addAttribute("allCustomers", customerService.getCustomers());
 
         //  step 2. choose HTML template
         return "customer";  // customer.html template
@@ -37,7 +37,7 @@ public class CustomerController {
     @PostMapping
     public String registerCustomer(@ModelAttribute Customer customer, Model model) {
         customerService.createCustomer(customer);
-        model.addAttribute("allCustomers", customerService.getCustomerList());
+        model.addAttribute("allCustomers", customerService.getCustomers());
         return "redirect:customer";
     }
 }
