@@ -10,4 +10,12 @@
         <p>How are you doing ?</p>
         Customer, Please <a th:href="@{/customer}">register</a>
     </div>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+            var greeting = [[${greeting}]];
+        /*]]>*/
+
+        console.log(greeting);
+    </script>
 </div>

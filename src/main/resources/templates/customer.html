@@ -46,4 +46,15 @@
         </tr>
         </tbody>
     </table>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+            var allCustomers = [[${allCustomers}]];
+        /*]]>*/
+
+        for( c of allCustomers) {
+            console.log(c);
+        }
+
+    </script>
 </div>
